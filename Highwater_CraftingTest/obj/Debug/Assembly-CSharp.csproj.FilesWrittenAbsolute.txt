@@ -1,34 +1,17 @@
-/Users/microlm/Heartline Project/Highwater_CraftingTest/Temp/bin/Debug/UnityEngine.dll
-/Users/microlm/Heartline Project/Highwater_CraftingTest/Temp/bin/Debug/UnityEditor.dll
-/Users/microlm/Heartline Project/Highwater_CraftingTest/Temp/bin/Debug/UnityEngine.UI.dll
-/Users/microlm/Heartline Project/Highwater_CraftingTest/Temp/bin/Debug/UnityEngine.Networking.dll
-/Users/microlm/Heartline Project/Highwater_CraftingTest/Temp/bin/Debug/Mono.Cecil.dll
-/Users/microlm/Heartline Project/Highwater_CraftingTest/Temp/bin/Debug/Unity.SerializationLogic.dll
-/Users/microlm/Heartline Project/Highwater_CraftingTest/Temp/bin/Debug/Unity.DataContract.dll
-/Users/microlm/Heartline Project/Highwater_CraftingTest/Temp/bin/Debug/ICSharpCode.NRefactory.dll
-/Users/microlm/Heartline Project/Highwater_CraftingTest/Temp/bin/Debug/Unity.UNetWeaver.dll
-/Users/microlm/Heartline Project/Highwater_CraftingTest/Temp/bin/Debug/Unity.UNetWeaver.dll.mdb
-/Users/microlm/Heartline Project/Highwater_CraftingTest/Temp/bin/Debug/Unity.CecilTools.dll
-/Users/microlm/Heartline Project/Highwater_CraftingTest/Temp/bin/Debug/Mono.Cecil.Pdb.dll
-/Users/microlm/Heartline Project/Highwater_CraftingTest/Temp/bin/Debug/Mono.Cecil.Mdb.dll
-/Users/microlm/Heartline Project/Highwater_CraftingTest/Temp/bin/Debug/Assembly-CSharp.dll.mdb
-/Users/microlm/Heartline Project/Highwater_CraftingTest/Temp/bin/Debug/Assembly-CSharp.dll
-/Users/microlm/Heartline Project/Highwater_CraftingTest/obj/Debug/Assembly-CSharp.dll
-/Users/microlm/Heartline Project/Highwater_CraftingTest/obj/Debug/Assembly-CSharp.dll.mdb
-/Users/microlm/Highwater_CraftingTest/Temp/bin/Debug/Assembly-CSharp.dll.mdb
-/Users/microlm/Highwater_CraftingTest/Temp/bin/Debug/Assembly-CSharp.dll
-/Users/microlm/Highwater_CraftingTest/obj/Debug/Assembly-CSharp.dll
-/Users/microlm/Highwater_CraftingTest/obj/Debug/Assembly-CSharp.dll.mdb
-/Users/microlm/Highwater_CraftingTest/Temp/bin/Debug/UnityEngine.dll
-/Users/microlm/Highwater_CraftingTest/Temp/bin/Debug/UnityEditor.dll
-/Users/microlm/Highwater_CraftingTest/Temp/bin/Debug/UnityEngine.UI.dll
-/Users/microlm/Highwater_CraftingTest/Temp/bin/Debug/UnityEngine.Networking.dll
-/Users/microlm/Highwater_CraftingTest/Temp/bin/Debug/Mono.Cecil.dll
-/Users/microlm/Highwater_CraftingTest/Temp/bin/Debug/Unity.SerializationLogic.dll
-/Users/microlm/Highwater_CraftingTest/Temp/bin/Debug/Unity.DataContract.dll
-/Users/microlm/Highwater_CraftingTest/Temp/bin/Debug/ICSharpCode.NRefactory.dll
-/Users/microlm/Highwater_CraftingTest/Temp/bin/Debug/Unity.UNetWeaver.dll
-/Users/microlm/Highwater_CraftingTest/Temp/bin/Debug/Unity.UNetWeaver.dll.mdb
-/Users/microlm/Highwater_CraftingTest/Temp/bin/Debug/Unity.CecilTools.dll
-/Users/microlm/Highwater_CraftingTest/Temp/bin/Debug/Mono.Cecil.Pdb.dll
-/Users/microlm/Highwater_CraftingTest/Temp/bin/Debug/Mono.Cecil.Mdb.dll
+/Users/microlm/highwater-crafting-test/Highwater_CraftingTest/Temp/bin/Debug/Assembly-CSharp.dll.mdb
+/Users/microlm/highwater-crafting-test/Highwater_CraftingTest/Temp/bin/Debug/Assembly-CSharp.dll
+/Users/microlm/highwater-crafting-test/Highwater_CraftingTest/obj/Debug/Assembly-CSharp.dll
+/Users/microlm/highwater-crafting-test/Highwater_CraftingTest/obj/Debug/Assembly-CSharp.dll.mdb
+/Users/microlm/highwater-crafting-test/Highwater_CraftingTest/Temp/bin/Debug/UnityEngine.dll
+/Users/microlm/highwater-crafting-test/Highwater_CraftingTest/Temp/bin/Debug/UnityEditor.dll
+/Users/microlm/highwater-crafting-test/Highwater_CraftingTest/Temp/bin/Debug/UnityEngine.UI.dll
+/Users/microlm/highwater-crafting-test/Highwater_CraftingTest/Temp/bin/Debug/UnityEngine.Networking.dll
+/Users/microlm/highwater-crafting-test/Highwater_CraftingTest/Temp/bin/Debug/Mono.Cecil.dll
+/Users/microlm/highwater-crafting-test/Highwater_CraftingTest/Temp/bin/Debug/Unity.SerializationLogic.dll
+/Users/microlm/highwater-crafting-test/Highwater_CraftingTest/Temp/bin/Debug/Unity.DataContract.dll
+/Users/microlm/highwater-crafting-test/Highwater_CraftingTest/Temp/bin/Debug/ICSharpCode.NRefactory.dll
+/Users/microlm/highwater-crafting-test/Highwater_CraftingTest/Temp/bin/Debug/Unity.UNetWeaver.dll
+/Users/microlm/highwater-crafting-test/Highwater_CraftingTest/Temp/bin/Debug/Unity.UNetWeaver.dll.mdb
+/Users/microlm/highwater-crafting-test/Highwater_CraftingTest/Temp/bin/Debug/Unity.CecilTools.dll
+/Users/microlm/highwater-crafting-test/Highwater_CraftingTest/Temp/bin/Debug/Mono.Cecil.Pdb.dll
+/Users/microlm/highwater-crafting-test/Highwater_CraftingTest/Temp/bin/Debug/Mono.Cecil.Mdb.dll

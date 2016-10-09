@@ -26,7 +26,8 @@ public abstract class ObjectAttribute : CollectableObject {
 		if (component != null) 
 		{
 			Dictionary<string, float> otherAttributes = component.GetAttributes ();
-			foreach (string key in otherAttributes.Keys) {
+			foreach (string key in otherAttributes.Keys) 
+			{
 				thisAttr.Add (key, otherAttributes [key]);
 			}
 		}
@@ -37,5 +38,10 @@ public abstract class ObjectAttribute : CollectableObject {
 	public virtual void ReadyAttribute()
 	{
 		
+	}
+
+	public void ChangeComponent(CollectableObject c)
+	{
+		component = c;
 	}
 }

@@ -8,6 +8,7 @@ public class ActionButton : UsesActionPerformed {
 	Dictionary<string, float> vars = null;
 	ActionsPerformed action;
 	Text btnText;
+	string actionsID;
 
 	void Awake()
 	{
@@ -27,7 +28,21 @@ public class ActionButton : UsesActionPerformed {
 
 	public void performAction()
 	{
+		SubpanelBehavior.instance.ClearSubActionPanel ();
 		action (vars);
-		SubpanelBehavior.instance.RefreshSubPanel ();
+		if (SubpanelBehavior.instance.currentState < 2) {
+
+			SubpanelBehavior.instance.RefreshSubPanel ();
+		}
+	}
+
+	public void setActionsID(string i)
+	{
+		actionsID = i;
+	}
+
+	public void subPanelAction(Dictionary<string, float> variables)
+	{
+		SubpanelBehavior.instance.CreateSubAction (actionsID);
 	}
 }

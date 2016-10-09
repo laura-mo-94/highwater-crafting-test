@@ -15,80 +15,101 @@ public class SolidAttribute : ObjectAttribute {
 	float sharpenUpperThreshold = 0.7f;
 	float weaveThreshold = 0.8f;
 
-	Dictionary<string, int> actionsCompleted;
+	Dictionary<string, bool> actionCompleted;
 
 	public override void ReadyAttribute()
 	{
 		attributes = new Dictionary<string, float> ();
+		actionCompleted = new Dictionary<string, bool> ();
 
 		attributes.Add ("flexibility", flexibility);
 		attributes.Add ("durability", durability);
 		attributes.Add ("elasticity", elasticity);
 		attributes.Add ("stickiness", stickiness);
-
-		 actionsCompleted = new Dictionary<string, int> ();
-		actionsCompleted.Add ("Weave", 0);
-		actionsCompleted.Add ("Sharpen", 0);
+		attributes.Add ("sharpness", sharpness);
+		attributes.Add ("thickness", thickness);
+		actionCompleted.Add ("Weave", false);
+		actionCompleted.Add ("Sharpen", false);
 	}
 		
-	public override Dictionary<string, ActionsPerformed> GetPossibleActions()
+	public override Dictionary<string, List<Action>> GetPossibleActions()
 	{
-		Dictionary<string, ActionsPerformed> possibleActions = new Dictionary<string, ActionsPerformed> ();
+		Dictionary<string, List<Action>> possibleActions = new Dictionary<string, List<Action>> ();
+	
+		if (!possibleActions.ContainsKey (defaultCategoryName)) 
+		{
+			possibleActions.Add (defaultCategoryName, new List<Action> ());
+		}
+
 		if (component != null) 
 		{
 			possibleActions = component.GetPossibleActions ();
 		}
 
-		if (flexibility < sharpenLowerThreshold && elasticity < sharpenLowerThreshold && durability > sharpenUpperThreshold && actionsCompleted["Sharpen"] < 5) 
+		if (flexibility < sharpenLowerThreshold && elasticity < sharpenLowerThreshold && durability > sharpenUpperThreshold && !actionCompleted["Sharpen"]) 
 		{
 			ActionsPerformed sharpen = new ActionsPerformed (Sharpen);
-			possibleActions.Add ("Sharpen", Sharpen);
+			Action act = new Action ("Sharpen", sharpen);
+			possibleActions [defaultCategoryName].Add (act);
 		}
 
-		if (flexibility > weaveThreshold && actionsCompleted["Weave"] > 0) 
+		if (flexibility > weaveThreshold && !actionCompleted["Weave"]) 
 		{
-			ActionsPerformed weave = new ActionsPerformed (Weave);
-			possibleActions.Add ("Weave", Weave);
+			possibleActions.Add("Weave", new List<Action>());
+
+			ActionsPerformed wRope = new ActionsPerformed (WeaveRope);
+			Action weaveRope = new Action ("Weave Rope", wRope);
+			possibleActions["Weave"].Add (weaveRope);
+
+			ActionsPerformed wBasket = new ActionsPerformed (WeaveBasket);
+			Action weaveBasket = new Action ("Weave Basket", wBasket);
+			possibleActions["Weave"].Add (weaveBasket);
 		}
-
-
 
 		return possibleActions;
 	}
 
-	public void Weave(Dictionary<string, float> variables)
+	public void WeaveRope(Dictionary<string, float> variables)
 	{
 		string name;
-		float weaveType = variables ["weaveType"];
-
 		GameObject baseOb = this.gameObject;
+		BaseObject baseObComponent = baseOb.GetComponent<BaseObject> ();
 
-
-		if (weaveType < 5f) 
+		if (thickness > 0.5f) 
 		{
-			if (thickness > 0.5f) 
-			{
-				name = "Thread";
-			} 
-			else 
-			{
-				name = "Rope";
-			}
-
-			baseOb.name = baseObject.objectName + " " + name;
-			durability = durability * weaveType * elasticity / 2f;
-			thickness = thickness * 4f;
+			name = baseObject.objectName + " Thread";
 		} 
-		else if (weaveType < 10f) 
+		else 
 		{
-			name = "Basket";
-			baseOb.name = baseObject.objectName + " " + name;
-			durability = durability * (weaveType - 4f) * elasticity / 2f;
-			thickness = thickness * 2f;
+			name = baseObject.objectName + " Rope";
 		}
 
-		actionsCompleted ["Weave"] = actionsCompleted ["Weave"] + 1;
-			
+		baseOb.name =  name;
+		baseObject.changeName(name);
+		baseObject.tags.Add ("Rope");
+		durability = durability * elasticity / 2f;
+
+		actionCompleted ["Weave"] = true;
+		thickness = thickness * 4f;
+
+		baseObComponent.RemoveAttributes (new List<string> () {GetType ().Name}, true);
+	}
+
+	public void WeaveBasket(Dictionary<string, float> variables)
+	{
+		string name;
+		GameObject baseOb = this.gameObject;
+
+		name = baseObject.objectName + " Basket";
+		durability = durability  * elasticity / 2f;
+		thickness = thickness * 2f;
+
+		actionCompleted ["Weave"] = true;
+
+		baseOb.name = name;
+		baseObject.changeName(name);
+
+		baseOb.GetComponent<BaseObject> ().RemoveAttributes (new List<string> (){GetType ().Name}, true);
 	}
 
 	public void Sharpen(Dictionary<string, float> variables)
@@ -98,12 +119,17 @@ public class SolidAttribute : ObjectAttribute {
 			if (!this.gameObject.name.Contains ("Blade")) 
 			{
 				this.gameObject.name = this.gameObject.name + " Blade";
+				GetComponent<BaseObject> ().changeName (this.gameObject.name);
 			}
+		} 
+		else 
+		{
+			this.gameObject.name = "Sharpened " + this.gameObject.name;
+			GetComponent<BaseObject> ().changeName (this.gameObject.name);
 		}
 
-		sharpness = sharpness * 1.2f;
-
-		actionsCompleted ["Sharpen"] = actionsCompleted ["Sharpen"] + 1;
+		sharpness = sharpness * 1.5f;
+		actionCompleted ["Sharpen"] = true;
 		attributes ["sharpness"] = sharpness;
 	}
 }
